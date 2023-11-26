@@ -2,6 +2,7 @@
 
 import 'dart:async';
 
+import 'package:eng_card_app/consts/utils.dart';
 import 'package:eng_card_app/data/repositories/preferences/preferences_repository_impl.dart';
 import 'package:eng_card_app/routes/routes.dart';
 import 'package:eng_card_app/services/backend_service.dart';
@@ -13,7 +14,6 @@ import 'package:eng_card_app/pages/layout/layout.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:get_it/get_it.dart';
-import 'package:logger/logger.dart';
 
 var logger = Logger();
 

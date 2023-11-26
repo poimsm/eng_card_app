@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'dart:developer';
+// import 'dart:developer';
 import 'dart:io';
 import 'dart:convert';
 import 'package:eng_card_app/data/network/enums.dart';
@@ -7,7 +7,6 @@ import 'package:eng_card_app/data/network/mockserver.dart';
 import 'package:eng_card_app/config.dart';
 import 'package:eng_card_app/data/network/utils.dart';
 import 'package:eng_card_app/consts/utils.dart';
-import 'package:logger/logger.dart';
 
 var logger = Logger();
 
@@ -126,7 +125,7 @@ class Network {
       httpClient.close();
 
       final data = reply != '' ? jsonDecode(reply) : '';
-      log(reply);
+      // log(reply);
 
       if (serverErrorHandler(
           reply, statusCode, url.path, method.toString(), false)) {
@@ -175,7 +174,7 @@ class Network {
     }
 
     // var replyText= json.encode(reply);
-    log(reply);
+    // log(reply);
 
     final data = reply != '' ? jsonDecode(reply) : '';
 

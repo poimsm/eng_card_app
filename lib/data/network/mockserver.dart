@@ -22,12 +22,16 @@ class MockServer {
 
     await sleep(1000);
 
-    if (endpoint.contains('/questions')) {
-      return MockReply(200, MockQuestions().json());
+    if (endpoint.contains('/cards')) {
+      return MockReply(200, MockCards().json());
     }
 
     if (endpoint.contains('/global/config')) {
       return MockReply(200, MockBackendSettings().json());
+    }
+
+    if (endpoint.contains('/device')) {
+      return MockReply(200, MockDevice().json());
     }
 
     return MockReply(404, 'Not Found');
@@ -39,6 +43,10 @@ class MockServer {
     print('\x1B[33m -------------------------------- \x1B[0m');
 
     await sleep(1000);
+
+    if (endpoint.contains('/device')) {
+      return MockReply(200, MockDevice().json());
+    }
 
     return MockReply(404, 'Not Found');
   }

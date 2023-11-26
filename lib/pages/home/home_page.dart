@@ -64,7 +64,9 @@ class HomePageState extends ConsumerState<HomePage> {
     }
 
     return SafeArea(
-      child: Container(),
+      child: Container(
+        child: Text('HOLAAAA')
+      ),
       // child: RoundScreen(
       //   isWelcomeAgain: homeState.questionRoundCounter == 0,
       //   roundNumber: homeState.questionRoundCounter,

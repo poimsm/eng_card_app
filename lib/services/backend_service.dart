@@ -1,6 +1,6 @@
 import 'package:eng_card_app/config.dart';
+import 'package:eng_card_app/consts/utils.dart';
 import 'package:eng_card_app/data/network/network.dart';
-import 'package:logger/logger.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 var logger = Logger();
