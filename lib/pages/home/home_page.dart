@@ -1,6 +1,7 @@
 import 'package:card_swiper/card_swiper.dart';
 import 'package:eng_card_app/pages/home/home_controller.dart';
 import 'package:eng_card_app/consts/utils.dart';
+import 'package:eng_card_app/pages/home/widgets/vocab_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -48,44 +49,21 @@ class HomePageState extends ConsumerState<HomePage> {
     size = MediaQuery.of(context).size;
     homeState = ref.watch(homeProvider);
 
-    // ignore: avoid_print
-    print('HOME BUILD');
-
-    if (homeState.isLoading) {
-      return Container(
-          height: size.height,
-          width: size.width,
-          color: Colors.black,
-          child: Center(
-              child: SpinKitThreeBounce(
-            color: Colors.white,
-            size: 50.0,
-          )));
-    }
-
     return SafeArea(
       child: Container(
-        child: Text('HOLAAAA')
+        color: Color(0xffF2F2F2),
+        width: size.width,
+        height: size.height,
+        alignment: Alignment.center,
+        child: Container(
+          // color: Colors.blue,
+          // width: size.width*0.9,
+          // height: size.height*0.75,
+          child: VocabCard(size: size)
+          ),
       ),
-      // child: RoundScreen(
-      //   isWelcomeAgain: homeState.questionRoundCounter == 0,
-      //   roundNumber: homeState.questionRoundCounter,
-      //   onCreateUser: () {},
-      //   onStartQuiz: () {
-      //     initQuiz();
-      //   },
-      // ),
-    );
+    );    
   }
 
-  _loading() {
-    return SizedBox(
-      width: size.width,
-      height: size.height * 0.5,
-      child: SpinKitThreeBounce(
-        color: Colors.white,
-        size: 35.0,
-      ),
-    );
-  }
+ 
 }

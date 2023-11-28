@@ -80,12 +80,13 @@ class MyApp extends StatelessWidget {
     return GestureDetector(
       onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
       child: MaterialApp(
-          debugShowCheckedModeBanner: false,
-          builder: (context, widget) => Layout(widget!),
-          title: 'Material App',
-          navigatorKey: navigatorKey,
-          initialRoute: startPage,
-          routes: Pages.routes),
+        debugShowCheckedModeBanner: false,
+        builder: (context, widget) => Layout(widget!),
+        title: 'Material App',
+        navigatorKey: navigatorKey,
+        initialRoute: startPage,
+        routes: Pages.routes,
+      ),
     );
   }
 }
