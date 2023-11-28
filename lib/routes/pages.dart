@@ -16,7 +16,7 @@ abstract class Pages {
     Routes.ERROR: (_) => ErrorPage(),
     Routes.NEW_APP_VERSION: (_) => NewAppVersionPage(),
     Routes.HOME: (_) => HomePage(),
-    Routes.FAVORITE: (_) => FavotirePage(),
+    Routes.FAVORITE: (_) => FavoritePage(),
     Routes.PROFILE: (_) => ProfilePage(),
     Routes.NOTES: (_) => NotesPage(),
   };

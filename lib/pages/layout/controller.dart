@@ -57,4 +57,19 @@ class Screen with ChangeNotifier {
     navigatorKey.currentState?.pushReplacementNamed(route, arguments: args);
     notifyListeners();
   }
+
+
+  bool _showNavBar = true;
+  bool get showNavBar => _showNavBar;
+
+  toggleNavBar() {
+    _showNavBar = !_showNavBar;
+    print('_showNavBar:::: $_showNavBar');
+    notifyListeners();
+  }
+
+  // hideNavBar() {
+  //   _showNavBar = false;
+  //   notifyListeners();
+  // }
 }

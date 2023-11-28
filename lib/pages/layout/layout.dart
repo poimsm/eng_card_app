@@ -14,12 +14,17 @@ class Layout extends StatelessWidget {
       final provider = Screen();
       provider.screenSize = size;
       return Screen();
-    }, builder: (context3, _) {
+    }, builder: (contextx, _) {
       return Scaffold(
         body: Stack(
           children: [
             child,
-            Positioned(bottom: 0, left: 0, child: BottomNavBar()),
+            Positioned(
+                bottom: 0,
+                left: 0,
+                child: Consumer<Screen>(builder: (context, provider, child) {
+                  return provider.showNavBar ? BottomNavBar() : Container();
+                })),
             Positioned(
                 top: 0,
                 left: 0,
@@ -32,7 +37,8 @@ class Layout extends StatelessWidget {
                 child: Consumer<Screen>(builder: (context, provider, child) {
                   return _toast(
                       provider.renderToast, provider.toastMessage, size);
-                }))
+                })),
+            // _modal()
           ],
         ),
       );
